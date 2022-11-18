@@ -10,7 +10,7 @@
 */
 
 int sub_array_sum(int* L, int n);
-int sum(int* L, int n)int sum(int* L, int n);
+int sum(int* L, int n);
 
 int main() {
   int l1[] = {1,2,3};
