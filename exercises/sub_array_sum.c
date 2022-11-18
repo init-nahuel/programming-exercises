@@ -16,9 +16,9 @@ int main() {
   int l1[] = {1,2,3};
   assert(sub_array_sum(l1, sizeof(l1)/sizeof(int)) == 20);
   int l2[] = {0};
-  assert(sub_array_sum(l2, sizeof(l1)/sizeof(int)) == 0);
+  assert(sub_array_sum(l2, sizeof(l2)/sizeof(int)) == 0);
   int l3[] = {2,3,6,1};
-  assert(sub_array_sum(l3, sizeof(l1)/sizeof(int)) ==  66);
+  assert(sub_array_sum(l3, sizeof(l3)/sizeof(int)) ==  66);
 
   return 0;
 }
@@ -35,14 +35,11 @@ int sum(int* L, int n) {
 int sub_array_sum(int* L, int n) {
   int j = n-1;
   int total = 0;
-  int i = 0;
-  do {
-    total += sum(L+i, j+1-i);
-    if (i == j) {
-      i = 0;
-      j--;
+  while (j >= 0) {
+    for (int i=0; i<=j; i++) {
+      total += sum(L+i, j+1-i);
     }
-    i++;
-  } while(i != j);
+    j--;
+  }
   return total;
 }
