@@ -31,9 +31,10 @@ int sum(int* L, int n) {
   return total;
 }
 
+// Time complexity O(n^3)
 int sub_array_sum(int* L, int n) {
   int j = n-1;
-  total = 0;
+  int total = 0;
   int i = 0;
   do {
     total += sum(L+i, j+1-i);
